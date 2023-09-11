@@ -1,0 +1,36 @@
+.main-container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1820px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcome h1 {
+  color: var(--title-color);
+  font-size: 48px;
+  font-weight: 500;
+  padding: 32px;
+  backdrop-filter: blur(15px);
+}
+
+.login-form {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+}
