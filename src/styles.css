@@ -1,3 +1,4 @@
+@import "simple-keyboard/build/css/index.css";
 html,
 body {
   height: 100%;
@@ -5,12 +6,10 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-image: url("public/subtle-pattern.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 30% 40%;
+  background-color: #ffffff;
 }
 
 :root {
-  --title-color: #525252;
+  --grey: #525252;
+  --form-background: rgba(1, 179, 166, 0.7);
 }

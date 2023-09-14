@@ -1,0 +1,139 @@
+<form class="form" #registerForm="ngForm">
+  <div class="inputFile">
+    <input
+      type="file"
+      id="useravatar"
+      name="profileImage"
+      [(ngModel)]="form.profileImage"
+      name="fullName"
+      #name="ngModel"
+    />
+    <label for="useravatar">
+      <img src="/assets/icono.jpg" alt="intup file icon" class="" />
+      <span>Subí tu foto de perfil</span>
+    </label>
+    <!-- <mat-error *ngIf="!name.valid || name.pristine">
+        Name is required
+      </mat-error>-->
+  </div>
+  <span>Nombre y Apellido</span>
+  <mat-form-field class="form__element">
+    <mat-label>Nombre y Apellido</mat-label>
+    <input
+      matInput
+      required
+      [(ngModel)]="form.fullName"
+      name="fullName"
+      #name="ngModel"
+      type="text"
+    />
+    <!-- <mat-error *ngIf="!name.valid || name.pristine">
+        Name is required
+      </mat-error>-->
+  </mat-form-field>
+  <div class="dni-container">
+    <div class="fullName">
+      <span>Email</span>
+      <mat-form-field class="form__element">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="form.email"
+          name="email"
+          #name="ngModel"
+          type="text"
+        />
+        <!-- <mat-error *ngIf="!name.valid || name.pristine">
+          Name is required
+        </mat-error>-->
+      </mat-form-field>
+    </div>
+    <div class="phone">
+      <span>Teléfono</span>
+      <mat-form-field class="form__element">
+        <mat-label>Teléfono</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="form.phone"
+          name="phone"
+          #name="ngModel"
+          type="text"
+        />
+        <!-- <mat-error *ngIf="!name.valid || name.pristine">
+        Name is required
+      </mat-error>-->
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="dni-container">
+    <div class="dni-type">
+      <span>Tipo de documento</span>
+      <mat-form-field class="form__element">
+        <mat-label>Tipo de documento</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="form.dniType"
+          name="dniType"
+          #name="ngModel"
+          type="text"
+        />
+        <!-- <mat-error *ngIf="!name.valid || name.pristine">
+        Name is required
+      </mat-error>-->
+      </mat-form-field>
+    </div>
+
+    <div class="dni-number">
+      <span>Número de documento</span>
+      <mat-form-field class="form__element">
+        <mat-label>Número de documento</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="form.dni"
+          name="dni"
+          #name="ngModel"
+          type="text"
+        />
+        <!-- <mat-error *ngIf="!name.valid || name.pristine">
+          Name is required
+        </mat-error>-->
+      </mat-form-field>
+    </div>
+  </div>
+
+  <span>Contraseña</span>
+  <mat-form-field class="form__element">
+    <mat-label>Contraseña</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      required
+      [(ngModel)]="form.password"
+      name="password"
+      #name="ngModel"
+      type="password"
+    />
+    <button
+      class="eyebtn"
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    <!-- <mat-error *ngIf="!name.valid || name.pristine">
+        Name is required
+      </mat-error>-->
+  </mat-form-field>
+
+  <button type="submit" class="btn-register" (click)="onSubmit()">
+    Registrarse
+  </button>
+</form>

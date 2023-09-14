@@ -1,11 +1,28 @@
 <main class="main-container">
   <section class="welcome">
-    <h1>Bienvenidos</h1>
+    <h1>¡Bienvenidos!</h1>
   </section>
-  <section class="login-form">
-    <div>logo</div>
-    <app-login-form></app-login-form>
-    <button>Teclado virtual</button>
-    <a href="#">¿No tienes cuenta? Regístrate aquí</a>
+  <section class="form-container">
+    <div class="form-icon"><mat-icon class="icon">login</mat-icon></div>
+    <app-login-form *ngIf="!registerForm" class="form"></app-login-form>
+    <app-register-form *ngIf="registerForm" class="form"></app-register-form>
+    <button class="keyboard">
+      <mat-icon>keyboard</mat-icon> Teclado virtual
+    </button>
+
+    <button
+      class="show-register"
+      (click)="showRegisterForm(true)"
+      *ngIf="!registerForm"
+    >
+      ¿No tienes cuenta? Regístrate aquí
+    </button>
+    <button
+      class="show-register"
+      (click)="showRegisterForm(false)"
+      *ngIf="registerForm"
+    >
+      ¿Ya tenés una cuenta? <strong>Iniciá sesión</strong>
+    </button>
   </section>
 </main>

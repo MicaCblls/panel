@@ -1,6 +1,67 @@
-<form class="form">
-  <input type="text" />
-  <input type="text" />
-  <input type="text" />
-  <button type="submit">Ingresar</button>
+<form class="form" #loginForm="ngForm">
+  <span>Tipo de documento</span>
+  <mat-form-field class="form__element">
+    <mat-label>Tipo de documento</mat-label>
+    <input
+      matInput
+      required
+      [(ngModel)]="form.dniType"
+      name="dniType"
+      #name="ngModel"
+      type="text"
+    />
+    <!-- <mat-error *ngIf="!name.valid || name.pristine">
+      Name is required
+    </mat-error>-->
+  </mat-form-field>
+
+  <span>Número de documento</span>
+  <mat-form-field class="form__element">
+    <mat-label>Número de documento</mat-label>
+    <input
+      matInput
+      required
+      [(ngModel)]="form.dni"
+      name="dni"
+      #name="ngModel"
+      type="text"
+    />
+    <!-- <mat-error *ngIf="!name.valid || name.pristine">
+        Name is required
+      </mat-error>-->
+  </mat-form-field>
+
+  <span>Contraseña</span>
+  <mat-form-field class="form__element">
+    <mat-label>Contraseña</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      required
+      [(ngModel)]="form.password"
+      name="password"
+      #name="ngModel"
+      type="password"
+    />
+    <button
+      class="eyebtn"
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    <!-- <mat-error *ngIf="!name.valid || name.pristine">
+        Name is required
+      </mat-error>-->
+  </mat-form-field>
+
+  <button type="submit" class="btn-register" (click)="onSubmit(loginForm)">
+    Ingresar
+  </button>
 </form>
+<!-- <div class="keyboard-container">
+  <div class="simple-keyboard"></div>
+</div> -->

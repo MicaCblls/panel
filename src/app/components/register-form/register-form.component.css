@@ -18,6 +18,12 @@
   width: 100%;
 }
 
+.dni-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
 .btn-register {
   width: 100%;
   margin-top: 10px;
@@ -41,6 +47,51 @@
   background-color: var(--form-background);
   border: none;
   padding: 0 15px;
+}
+
+.inputFile {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.inputFile input {
+  display: none;
+}
+.inputFile label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+
+.inputFile .checkIcon {
+  display: flex;
+  justify-content: flex-end;
+  color: #47bea3;
+  font-size: 16px;
+  width: 100px;
+}
+
+.inputFile img {
+  height: 48px;
+  max-height: max-content;
+  border-radius: 100%;
+}
+
+.inputFile span {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.inputFile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 ::ng-deep .mdc-text-field {
